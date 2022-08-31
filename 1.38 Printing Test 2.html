@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>1.38 Printing Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .noprint {
+          font-size: 24pt;
+          color: #83f;
+          display: block;
+      }
+      .print {
+          font-size: 24pt;
+          font-style: oblique;
+          color: #293;
+          display: none;
+      }
+      @media print {
+          .noprint {
+              display: none;
+          }
+          .print {
+              display: block;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test downloading embedded PDF in browser</h1>
+    <p><a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf">Open PDF in same window</a></p>
+    <p><a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" target="_blank">Open PDF target=_blank</a></p>
+    <h1>Test downloading embedded PDF through Google Drive (this is how Geotab embeds these)</h1>
+    <p><a href="https://drive.google.com/file/d/1vPEP1q310kJ0zfHWk4ODMH2MnW1mm-z_/view?usp=sharing">PDF on Drive same window</a></p>
+    <p><a href="https://drive.google.com/file/d/1vPEP1q310kJ0zfHWk4ODMH2MnW1mm-z_/view?usp=sharing">PDF on Drive target=_blank</a></p>
+    <h1>Test downloading PDF window.open</h1>
+    <a href="" onclick="NewTab()">Test</a>
+    <p><a href="javascript:window.open('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', 'JSDownload', 'height=400,width=400')" target='_blank" '>PDF on Drive same window</a></p>
+    <h1>Test page onload with a window.open event - If you end up on google, we allowed this to happen and is a failure</h1>
+    <p><a href="embedded_browser_window_open.html">PDF on Drive same window</a></p>
+    <script>
+      function NewTab() {
+          window.open("https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf", "JSDownload", "height=400,width=400");
+      }
+  </script>
+  </body>
+</html>
