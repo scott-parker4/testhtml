@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <title>1.38 Printing Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .noprint {
+          font-size: 24pt;
+          color: #83f;
+          display: block;
+      }
+      .print {
+          font-size: 24pt;
+          font-style: oblique;
+          color: #293;
+          display: none;
+      }
+      @media print {
+          .noprint {
+              display: none;
+          }
+          .print {
+              display: block;
+          }
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function() {
+        //this should never get launched - popup blocker should not allow it
+        window.open("https://www.google.com")
+      }
+    </script>
+  </head>
+  <body>
+    <h1>If you can see this page, we ignoreded a window.open call in the page on load event - SUCCESS! </h1>
+  </body>
+</html>
